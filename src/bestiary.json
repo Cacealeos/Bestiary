@@ -1,0 +1,225 @@
+
+ { "Enemies" : [
+  {
+    "Name": "Dark-Magian Shadow Manticore",
+    "Flavor": "A giant, controlled, artificial creature made from an enormous toxic mass of miasma with the consciousness of a Dark Magian sorcerer sealed inside. This forsaken remnant of the great war travels through the miasma of Dark Magi and materializes whenever it moves in to attack any intruder to the Dark Magian continent.",
+    "Abilities": [
+  {
+    "Name": "Phase Step"
+  },
+  {
+    "Name": "Dispersal",
+    "Info": "Difficulty (6+) Dispersal The Manticore retreats into the miasma but can still be sensed on the peripherals where it will stalk its targets and join in on any further battles."
+  }
+    ],
+    "Attacks": [
+  {
+    "Name": "Tail Sweep",
+    "Base": "20",
+    "Positive": "10",
+    "Negative": "10",
+    "Area": "Small AOE",
+    "Info": ""
+  },
+  {
+    "Name": "Claw",
+    "Base": "10",
+    "Positive": "10",
+    "Negative": "5",
+    "Area": "",
+    "Info": "Attacks 4 times"
+  },
+  {
+    "Name": "Bite",
+    "Base": "30",
+    "Positive": "10",
+    "Negative": "15",
+    "Area": "",
+    "Info": "Attempts 'Consume' if successful"
+  },
+  {
+    "Name": "Dive",
+    "Base": "15",
+    "Positive": "15",
+    "Negative": "5",
+    "Area": "",
+    "Info": "Only useable when descending from airborne position"
+  },
+  {
+    "Name": "Alchemy : Metaphysical – Transmute Light/Heat (Shadow Wave-Force)",
+    "Base": "36",
+    "Power": "4",
+    "Cost": "100",
+    "Area": "Medium AOE"
+  },
+  {
+    "Name": "Arcane : Cursed Breath",
+    "Check": [ "Resistance 7", "Mage Tech 60" ],
+    "Info": [ "Curses Magi-tech and equipment with great durability damage over time.", "Removes decay from mana structure with vitalize" ]
+
+  },
+  {
+    "Name": "Consume",
+    "Info": "GRAB that plces target inside dragon"
+  }
+    ],
+    "Power": "4",
+    "Endurance": "3",
+    "Speed": "0",
+    "Flight": "4",
+    "Int": "4",
+    "Res": "5",
+    "Spirit": "500",
+    "Manna": "300"
+  },//END ENEMY
+  {
+    "Name": "Cursed Wind Elemental",
+    "Flavor": "A concentrated Elemental entrapped by Sorcery made by the Dark magians to ensnare servants of elementalists who have long served them. They have since been assimilated to guard the barrens of Dark Magi",
+    "Abilities": [ {} ],
+    "Attacks": [
+  {
+    "Name": "Razor",
+    "Base": "64",
+    "Power": "GMD",
+    "Positive": "0",
+    "Negative": "22",
+    "Area": "Single Target"
+  },
+  {
+    "Name": "Stream",
+    "Base": "40",
+    "Power": "GMD",
+    "Positive": "0",
+    "Negative": "13",
+    "Area": "Moderate AOE"
+  },
+
+  {
+    "Name": "Sonic Pressure",
+    "Base": "98",
+    "Power": "GMD",
+    "Positive": "0",
+    "Negative": "33",
+    "Area": "Large AOE"
+  }
+    ],
+
+    "Power": "5",
+    "Endurance": "1",
+    "Speed": "0",
+    "Flight": "6",
+    "Life-Force": "80",
+
+    "Drops": [
+  {
+    "Name": "Depleated Propagation Seal",
+    "Info": "If charged, will cause sealed elemental to replicate overtime."
+  }
+    ]
+  },//END ENEMY
+  {
+    "Name": "Specter Vigilant",
+    "Flavor": "The Specters are animated Mage armor and weapons that self-repair with its unique fusion process in conjunction with the atmosphere of Dark Magi. The Vigilant spirits wearing the armaments emanate from buried repositories that house their true components. But these tombs have long since been lost to the barren and their exact locations are not known even to the Dark Magians.",
+    "Abilities": [
+  {
+    "Name": "Physical Guard"
+  },
+  {
+    "Info": "Takes half damage from physical"
+  }
+    ],
+    "Power": "3",
+    "Endurance": "3",
+    "Speed": "3",
+    "Flight": "2",
+    "Melee": "50",
+    "Intelligence": "3",
+    "Resistance": "4",
+    "Accuracy": "325",
+    "Evasion": "15",
+    "Guard-Guage": "100",
+    "Spirit-Force": "240",
+    "Attacks": [
+  {
+    "Name": "Warp Pike",
+    "Base": "11",
+    "Accuracy": "55",
+    "Positive": "7",
+    "Negative": "4",
+    "Durability": "120"
+  },
+  {
+    "Name": "Collect",
+    "Info": "Mass with other specters to heal/increase energy via through sacrifice"
+  }
+    ],
+    "Style": [
+  {
+    "Name": "Pull Sting",
+    "Accuracy": "170",
+    "Evasion": "15",
+    "Guard-Guage": "100",
+    "Rank": "C",
+    "Type": "P",
+    "Requirements": "45",
+    "Advantage": [ "HH", "S" ]
+  }
+    ],
+
+    "Drops": [
+  {
+    "Name": "Spirit Bangel",
+    "Info": "+60 max spirit (up to maximum of 260)."
+  }
+    ]
+  },//END ENEMY
+  {
+    "Name": "Spectral Sentinel",
+    "Flavor": "The Specters are animated Mage armor and weapons that self-repair with its unique fusion process in conjunction with the atmosphere of Dark Magi. The Sentinel spirits wield Heavy Shields and pronged Spears and are usually found guarding entrances to Dark Magian outposts and strongholds. The Specters are born from buried repositories that house their true components. But these tombs have long since been lost to the barren and their exact locations are not known even to the Dark Magians.",
+    "Abilities": [
+  {
+    "Name": "Physical Guard",
+    "Info": "Takes half damage from physical"
+  },
+  {
+    "Name": "Rivet Cast"
+  },
+  {
+    "Name": "Spell Reflex"
+  }
+    ],
+    "Power": "3",
+    "Endurance": "3",
+    "Speed": "3",
+    "Flight": "3",
+    "Weapon Arts": "45",
+    "Intelligence": "3",
+    "Resistance": "4",
+    "Accuracy": "425-390",
+    "Evasion": "80",
+    "Guard-Guage": "150",
+    "Demonic Essence": "220",
+    "Attacks": [
+  {
+    "Name": "Chaotic Lance",
+    "Base": "15",
+    "Positive": "8",
+    "Negative": "5",
+    "Durability": "170",
+    "Info": "Deals Disruption damage"
+  },
+  {
+    "Name": "Enchanting-Applied Effect",
+    "Info": ""
+  }
+    ],
+    "Drops": [
+  {
+    "Name": " Mage Tech Assembly Shield Braclet",
+    "Info": "(ASB)"
+  }
+    ]
+  }//END ENEMY
+] //END of Enemy Entries
+}
+//END of File

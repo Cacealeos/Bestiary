@@ -1,0 +1,98 @@
+<header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+
+	  
+  "proxy": "http://localhost:1337",
+
+  let bestiary = {};
+    fetch('bestiary.json')
+        .then((res) => res.json())
+        .then((data) => {
+            bestiary = data;
+        })
+		************************************************  C S S  *********************************************************
+
+		.bEntry-secondary-enter {
+    position: absolute;
+    transform: translateY(110%);
+}
+
+.bEntry-secondary-enter-active {
+    transform: translateY(0%);
+    transition: all var(--speed) ease;
+}
+
+.bEntry-secondary-enter-exit {
+    position: absolute;
+}
+
+.bEntry-secondary-enter-exit-active {
+    transform: translateY(110%);
+    transition: all var(--speed) ease;
+}
+		
+		*****************************************************  C S S  ********************************************************************
+		
+const [showButton, setShowButton] = useState(true);
+    const [showMessage, setShowMessage] = useState(false);
+
+    return (
+        <>
+            <button
+                onClick={() => setShowMessage(true)}
+                size="lg"
+            >
+                Show Message
+        </button>
+
+            <CSSTransition
+                in={showMessage}
+                timeout={300}
+                classNames="bEntry-primary"
+                unmountOnExit
+                onEnter={() => setShowButton(false)}
+                onExited={() => setShowButton(true)}
+            >
+                <div className="item">
+
+                    <button onClick={() => setShowMessage(false)}>
+                        Close
+          </button>
+                </div>
+
+            </CSSTransition>
+        </>
+        )
+	
+
+	   <div className="dropdown">
+                {Data.map(Entry => {
+                    //setActive([...active, false])
+                    return (
+                        <Bentry Item={Entry} />
+                    )
+                })
+                }
+            </div>
+
+			<div className="GroupSectionB">
+                <h1>GB</h1>
+                {Object.values(showAwayTeam).forEach(G => {
+                    if (G.Enabled)
+                        G.Enemies.map(E => {
+                            return <EnemyPage Enemy={E} />
+                        })
+                })}
+            </div>
