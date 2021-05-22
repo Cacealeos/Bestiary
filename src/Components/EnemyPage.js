@@ -5,8 +5,6 @@ import { useState } from 'react'
 const EnemyPage = ({ Unit, STY, ReArrange, Position }) => {
 
     const [usePage, setPage] = useState('Stats');
-    const [useBox, setBox] = useState();
-    
 
     return (
         <>

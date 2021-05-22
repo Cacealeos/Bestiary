@@ -45,14 +45,21 @@ function App() {
             Enemies: []
         }
     })
-    const [entryHeightR, setHeightR] = useState(null)
-    const [entryHeightL, setHeightL] = useState(null)
-    const [open, setOpen] = useState(false)
+    const [homeRoster, sethomeRoster] = useState(0);
+    const [awayRoster, setawayRoster] = useState(0);
+    const [entryHeightR, setHeightR] = useState(null);
+    const [entryHeightL, setHeightL] = useState(null);
+    const [open, setOpen] = useState(false);
  
 
-    function addGroupEntry(Entry, gName, Team) {
-        
+    function addGroupEntry(Enemy, gName, Team) {
+
+        let Entry = Object.assign({}, Enemy);
+
         if (Team === "Home") {
+            Entry.ID = homeRoster;
+            Entry.Team = Team;
+            Entry.Group = gName;
             for (const X in showHomeTeam) {
                 if (X === gName)
                     setHomeTeam(prev => ({
@@ -61,8 +68,12 @@ function App() {
                     }));
                 //console.log(showHomeTeam[`${X}`].Enemies)
             }
+            sethomeRoster(homeRoster + 1)
         }
         if (Team === "Away") {
+            Entry.ID = awayRoster;
+            Entry.Team = Team;
+            Entry.Group = gName;
             for (const X in showAwayTeam) {
                 if (X === gName)
                     setAwayTeam(prev => ({
@@ -71,7 +82,33 @@ function App() {
                     }));
                 //console.log(showAwayTeam[`${X}`].Enemies)
             }
+            setawayRoster(awayRoster + 1)
         }
+    }
+
+    function removeGroupEntry(Group, ID, Team) {
+        
+        if (Team === "Home")
+            for (const X in showHomeTeam)
+                if(X===Group) {
+                    let N = showHomeTeam[Group].Enemies.filter(E => !Object.values(E).includes(ID));
+                
+                    setHomeTeam(prev => ({
+                        ...prev,
+                        [X]: { ...prev[X], Enemies: N }
+                    }))}
+        
+        if (Team === "Away")
+                for (const X in showAwayTeam)
+                    if (X === Group) {
+                    let N = showAwayTeam[Group].Enemies.filter(E => !Object.values(E).includes(ID));
+                    
+                        setAwayTeam(prev => ({
+                            ...prev,
+                            [X]: { ...prev[X], Enemies: N }
+                        }))
+                }
+        console.log("derpo");
     }
 
     return (
@@ -90,17 +127,16 @@ function App() {
                             }
                         }
                     }}
+                    Remove={removeGroupEntry}
                     setGroup={showHomeTeam}
                     removeGroup={false}
                 />
                 <div className="dropdownL" style={{ height: entryHeightL }}>
-                        <Bestiary Data={EnemyList} AddGroup={addGroupEntry} cSS='bEntry-primary' Team='Home' Groups={
+                    <Bestiary Data={EnemyList} Roster={homeRoster} AddtoGroup={addGroupEntry} cSS='bEntry-primary' Team='Home' Groups={
                             Object.values(showHomeTeam).filter(group => group.Enabled)
                         } />
                 </div>
             </div>
-
-            
 
             <div className="GroupSectionA">
                 <h1>GA</h1>
@@ -134,11 +170,12 @@ function App() {
                             }
                         }
                     }}
+                    Remove={removeGroupEntry}
                     setGroup={showAwayTeam}
                     removeGroup={false}
                 />
                 <div className="dropdownR" style={{ height: entryHeightR }}>
-                    <Bestiary Data={EnemyList} AddGroup={addGroupEntry} Click={() => setOpen(!open)} cSS='bEntry-secondary' Team='Away' Groups={
+                    <Bestiary Data={EnemyList} AddtoGroup={addGroupEntry} Click={() => setOpen(!open)} cSS='bEntry-secondary' Team='Away' Groups={
                         Object.values(showAwayTeam).filter(group => group.Enabled)
                     } />
                 </div>

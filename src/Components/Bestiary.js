@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import BItem from './BestiaryItem'
 
-const Bestiary = ({ Data, Click, AddGroup, cSS, Groups, Team }) => {
+const Bestiary = ({ Data, Click, AddtoGroup, cSS, Groups, Team }) => {
 
     const [active, setActive] = useState('')
     const [entryHeight, setHeight] = useState(null)
@@ -23,6 +23,7 @@ const Bestiary = ({ Data, Click, AddGroup, cSS, Groups, Team }) => {
         return (
             <>
                 <button className="item-button" onClick={() => { (active === Item.Name) ? setActive('') : setActive(Item.Name) }}>{Item.Name}</button>
+                
                 <CSSTransition in={active === Item.Name} unmountOnExit timeout={300} classNames={cSS} onEnter={calcHeight} >
                 <div >
                     <BItem Data={Item.Flavor} Heading='Flavor: ' />
@@ -38,7 +39,7 @@ const Bestiary = ({ Data, Click, AddGroup, cSS, Groups, Team }) => {
                     <b >Stats</b>
                     <BItem Data={Item.Power} Heading='Power: ' />
                         {Groups.map(G => {
-                            return <button onClick={() => AddGroup(Item, G.Name, Team)}>Add to Group {G.Name}</button>
+                            return <button onClick={() => AddtoGroup(Item, G.Name, Team) }>Add to Group {G.Name}</button>
                         })}
                         
                 </div>

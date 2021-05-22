@@ -1,7 +1,6 @@
 import React from 'react'
 import EnemyPage from './EnemyPage'
 import { useState } from 'react'
-import { elementRoles } from 'aria-query';
 
 const EnemySlider = ({ Group }) => {
 
@@ -53,7 +52,7 @@ const EnemySlider = ({ Group }) => {
         newlist.length = eList.length;
 
         for (var count1 = 0; count1 < (orList.length - 1); ++count1) {
-            if (enemyPl == place) {
+            if (enemyPl === place) {
                 newlist[place] = orList[orList.length - 1];// assigns the last style object in orList to move the selected enemyPage to the front
                 enemyPl +=1
             }
