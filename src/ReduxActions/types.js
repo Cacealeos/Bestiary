@@ -1,0 +1,4 @@
+export const REMOVE_MONSTER = 'REMOVE_MONSTER';
+export const COPY_MONSTER = 'COPY_MONSTER';
+export const KILL_MONSTER = 'KILL_MONSTER';
+export const REVIVE_MONSTER = 'REVIVE_MONSTER';

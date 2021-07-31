@@ -246,7 +246,93 @@ export const Enemies = [
                 Scaling: "12/12"
             }
         ]
-    }
+    },//END ENEMY
+    {
+        Name: "Undead Goliath",
+        Flavor: "A greater Undead Beast that stands 8 Meters tall and moves on four limbs with unnatural speed. This creature sports a small dismayed face with a disjointed jaw that opens wide when it seeks to devour undead and living alike.",
+        Power: 3,
+        Endurance: 3,
+        Speed: 2,
+        Flight: 0,
+        Melee: 55,
+        Int: 3,
+        Res: 5,
+        Con: 10,
+        Acc: 280,
+        Eva: 35,
+        GG: 350,
+        "Necro-Force": 1000,
+        Abilities: [
+            {
+                Name: "Defend",
+                Info: "Reduces damage recieved froma single attack by 30%"
+            },
+            {
+                Name: "Devour Undead",
+                Info: "Recovers Necro-Force equal to one quarter of the Target’s max Necro-Force. Target must be small than Undead Goliath."
+            },
+            {
+                Name: "Devour Living",
+                Info: "Target makes Power to Con Check (6). Target loses 30 Life – Force every turn while devoured and cannot except to attempt to escape with Power to Con Check (6). Undead Goliath recovers Necro-Force equal to lost life-force of target(s). Up to three human size target may be devoured at once."
+            },
+            {
+                Name: "Restless Death",
+                Info: "Recovers Necro-Force equal to 1/3 of total lost life-force every turn"
+            }
+        ],
+        Attacks: [
+            {
+                Name: "Maw",
+                Base: 30,
+                Scaling: "10 / 10",
+                Adv: "SS"
+            },
+            {
+                Name: "Necro-Blast",
+                Base: 40,
+                Scaling: "0 / 10",
+                Cost: 60
+            },
+            {
+                Name: "Necro-Devastation",
+                Info: "Goliath Self Destructs. Moderate AOE.",
+                Base: "Remaining Necro-Force / 7",
+                Power: 4,
+                Scaling: "0 / 70"
+            }]
+    },//END ENEMY
+    {
+        Name: "Undead Behemoth",
+        Flavor: "This abomination stands at around 30 meters with bulking appendages along its body all made of the same light-grey, rotting skin that reeks of death when torn.",
+        Power: 3,
+        Endurance: 3,
+        Speed: 3,
+        Flight: 0,
+        Melee: 40,
+        Int: 3,
+        Res: 5,
+        Con: 10,
+        Acc: 280,
+        Eva: 35,
+        GG: 350,
+        "Necro-Force": 1000,
+        Abilities: [
+            {
+                Name: "Defened",
+                Info: "Reduce damage taken by 30%"
+            },
+            {
+                Name: "Devour Undead",
+                Info: "Recovers Necro-Force equal to one quarter of the Target’s max Necro-Force. Target must be small than Undead Goliath."
+            }
+        ],
+        Attacks: [
+            {
+                Name: "Pungent Miasma",
+                Info: "Large AOE. Lowers Comat & Weapon Arts by 15. Lowers Acc by 60 while in Miasma.",
+                ChecK: "Res: 8"
+            }]
+    }//END ENEMY
     ]
 
 export default Enemies;

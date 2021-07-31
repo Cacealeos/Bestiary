@@ -6,6 +6,7 @@ import Bestiary from './Components/Bestiary'
 import EnemySlider from './Components/EnemySlider'
 import { useState } from 'react'
 import Enemies from './bestiaryData'
+import { Provider } from 'react-redux'
 //import './scss/grid.scss';
 
 function App() {
